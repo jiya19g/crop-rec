@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0fdf4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  color: #047857;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #047857;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #065f46;
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #065f46;
+}
+
+.crop-info {
+  text-align: left;
+  background: #f0fdf4;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 5px solid #047857;
+  word-wrap: break-word;
+}
+
+.crop-info h3 {
+  font-size: 16px;
+  color: #047857;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.crop-info h3::before {
+  content: "🌿";
+  margin-right: 8px;
+}
+
+.crop-info pre {
+  white-space: pre-wrap; /* Ensures text wraps properly */
+  word-wrap: break-word;
+  font-size: 13px;
+  font-family: "Courier New", monospace;
+  background: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+}
+.crop-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.crop-info li {
+  background: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  border-left: 3px solid #047857;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
