@@ -4,66 +4,69 @@ import json
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
+# Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
-# Load trained model, scaler, and mappings
+# Load trained model and scaler
 try:
     model = joblib.load("crop_recommendation_model.pkl")
     scaler = joblib.load("scaler.pkl")
-    crop_mapping = joblib.load("crop_mapping.pkl")
 
     if not hasattr(scaler, "transform"):
         raise ValueError("Loaded scaler is not a StandardScaler instance.")
 except Exception as e:
-    print(f"❌ Error loading model or scaler: {e}")
-    model, scaler, crop_mapping = None, None, {}
+    print(f"Error loading model or scaler: {e}")
+    scaler = None
 
-# Load crop details from JSON
+# Load crop growth info
 try:
-    with open("crop_details.json", "r") as file:
-        crop_details = {key.lower(): value for key, value in json.load(file).items()}  # Lowercase keys
-
-    print("✅ Loaded Crop Details:")
-    print(json.dumps(crop_details, indent=2))  # Pretty-print JSON
-
+    with open("Crop_Growth_Info.json", "r") as file:
+        crop_growth_info = json.load(file)
 except Exception as e:
-    print(f"❌ Error loading crop details: {e}")
-    crop_details = {}
+    print(f"Error loading Crop_Growth_Info.json: {e}")
+    crop_growth_info = {}
+
+# Load crop mapping
+try:
+    crop_mapping = joblib.load("crop_mapping.pkl")
+except Exception as e:
+    print(f"Error loading crop_mapping.pkl: {e}")
+    crop_mapping = {}
 
 @app.route('/')
 def home():
-    return "🌱 Crop Recommendation API is Running!"
+    return "Crop Recommendation API is Running!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
         data = request.get_json()
-        if not data:
-            return jsonify({"error": "No input data provided."})
+        features = np.array([[data['N'], data['P'], data['K'], data['temperature'], 
+                              data['humidity'], data['pH'], data['rainfall']]])
 
-        features = np.array([[data.get('N', 0), data.get('P', 0), data.get('K', 0), 
-                              data.get('temperature', 0), data.get('humidity', 0), 
-                              data.get('pH', 0), data.get('rainfall', 0)]])
-        
-        if scaler is None or model is None:
-            return jsonify({"error": "Model or scaler not loaded. Try retraining the model."})
+        if scaler:
+            scaled_features = scaler.transform(features)
+        else:
+            return jsonify({"error": "Scaler not loaded properly. Try retraining the model."})
 
-        scaled_features = scaler.transform(features)
         prediction = model.predict(scaled_features)
+        
+        predicted_crop = crop_mapping.get(prediction[0], "Unknown Crop")
 
-        predicted_crop = crop_mapping.get(prediction[0], "Unknown").lower()
-        crop_info = crop_details.get(predicted_crop, {"info": "Details not available."})
+        # Get crop growth info for the predicted crop
+        crop_info = crop_growth_info.get(predicted_crop.lower(), "No additional info available")
 
-        # Debugging logs
-        print(f"🔍 Predicted Crop: {predicted_crop}")
-        print(f"🌾 Crop Details Retrieved: {crop_info}")
-
-        return jsonify({"recommended_crop": predicted_crop, "crop_details": crop_info})
+        return jsonify({"recommended_crop": predicted_crop, "crop_info": crop_info})
 
     except Exception as e:
-        print(f"❌ Error in prediction: {e}")
         return jsonify({"error": str(e)})
+
+@app.route('/crop-info/<crop_name>', methods=['GET'])
+def get_crop_info(crop_name):
+    crop_name = crop_name.strip().lower()  # Normalize case
+    crop_info = crop_growth_info.get(crop_name, "No additional info available")
+    return jsonify({"info": crop_info})
 
 if __name__ == '__main__':
     app.run(debug=True)

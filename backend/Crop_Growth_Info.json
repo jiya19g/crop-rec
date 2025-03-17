@@ -1,0 +1,134 @@
+{
+    "rice": {
+        "Soil": "Clayey, loamy soil with good water retention.",
+        "Climate": "Warm, humid climate with temperatures between 20-35°C.",
+        "Watering": "Requires standing water during initial growth stages.",
+        "Fertilizer": "Nitrogen-rich fertilizers (e.g., urea) recommended."
+    },
+    "maize": {
+        "Soil": "Well-drained loamy soil, rich in organic matter.",
+        "Climate": "Warm climate, 18-27°C temperature range.",
+        "Watering": "Regular irrigation, especially during flowering.",
+        "Fertilizer": "Balanced NPK fertilizer for optimal yield."
+    },
+    "chickpea": {
+        "Soil": "Well-drained sandy or loamy soil.",
+        "Climate": "Cool season crop, 10-25°C temperature range.",
+        "Watering": "Minimal irrigation, avoid waterlogging.",
+        "Fertilizer": "Phosphorus-rich fertilizers for root development."
+    },
+    "kidneybeans": {
+        "Soil": "Well-drained loamy soil, slightly acidic to neutral.",
+        "Climate": "Warm growing season, 15-30°C.",
+        "Watering": "Regular moisture is required.",
+        "Fertilizer": "Organic compost and potassium-rich fertilizers."
+    },
+    "pigeonpeas": {
+        "Soil": "Well-drained sandy loam soil.",
+        "Climate": "Warm, tropical climate with 18-35°C range.",
+        "Watering": "Moderate water requirement, drought-tolerant.",
+        "Fertilizer": "Phosphorus and potassium-rich fertilizers."
+    },
+    "mothbeans": {
+        "Soil": "Sandy, well-drained soil.",
+        "Climate": "Hot, arid conditions with temperatures up to 40°C.",
+        "Watering": "Minimal irrigation, drought-resistant.",
+        "Fertilizer": "Minimal fertilization required."
+    },
+    "mungbean": {
+        "Soil": "Well-drained loamy soil.",
+        "Climate": "Warm, humid climate, 20-35°C.",
+        "Watering": "Regular but not excessive irrigation.",
+        "Fertilizer": "Phosphorus and potassium-based fertilizers."
+    },
+    "blackgram": {
+        "Soil": "Loamy soil with good drainage.",
+        "Climate": "Warm climate, 20-30°C.",
+        "Watering": "Moderate irrigation needed.",
+        "Fertilizer": "Organic manure and balanced NPK fertilizer."
+    },
+    "lentil": {
+        "Soil": "Sandy loam soil with good drainage.",
+        "Climate": "Cool season crop, 15-25°C.",
+        "Watering": "Minimal irrigation needed.",
+        "Fertilizer": "Phosphorus-rich fertilizers."
+    },
+    "pomegranate": {
+        "Soil": "Well-drained sandy loam soil.",
+        "Climate": "Warm, arid climate, 25-35°C.",
+        "Watering": "Regular watering for fruit development.",
+        "Fertilizer": "Potassium and phosphorus-based fertilizers."
+    },
+    "banana": {
+        "Soil": "Fertile, well-drained loamy soil.",
+        "Climate": "Warm, humid climate, 26-30°C.",
+        "Watering": "Regular irrigation, high water requirement.",
+        "Fertilizer": "Nitrogen and potassium-rich fertilizers."
+    },
+    "mango": {
+        "Soil": "Well-drained loamy or alluvial soil.",
+        "Climate": "Tropical climate, 24-30°C.",
+        "Watering": "Moderate watering during flowering and fruiting.",
+        "Fertilizer": "Organic manure and balanced fertilizers."
+    },
+    "grapes": {
+        "Soil": "Sandy loam, well-drained soil.",
+        "Climate": "Warm, dry climate, 20-35°C.",
+        "Watering": "Regular but controlled irrigation.",
+        "Fertilizer": "Potassium and phosphorus-rich fertilizers."
+    },
+    "watermelon": {
+        "Soil": "Sandy loam soil with good drainage.",
+        "Climate": "Hot and dry climate, 22-35°C.",
+        "Watering": "Regular watering, but avoid overwatering.",
+        "Fertilizer": "Balanced NPK fertilizer."
+    },
+    "muskmelon": {
+        "Soil": "Well-drained sandy loam soil.",
+        "Climate": "Warm, dry climate, 25-35°C.",
+        "Watering": "Regular watering required.",
+        "Fertilizer": "Nitrogen and potassium-rich fertilizers."
+    },
+    "apple": {
+        "Soil": "Loamy soil with good drainage and organic matter.",
+        "Climate": "Cold, temperate climate, 5-25°C.",
+        "Watering": "Regular but not excessive irrigation.",
+        "Fertilizer": "Organic manure and phosphorus-rich fertilizers."
+    },
+    "orange": {
+        "Soil": "Sandy loam, well-drained soil.",
+        "Climate": "Tropical and subtropical, 15-30°C.",
+        "Watering": "Regular irrigation, especially in dry seasons.",
+        "Fertilizer": "Nitrogen, phosphorus, and potassium-rich fertilizers."
+    },
+    "papaya": {
+        "Soil": "Loamy, well-drained soil rich in organic matter.",
+        "Climate": "Warm, tropical climate, 22-32°C.",
+        "Watering": "Regular but avoid waterlogging.",
+        "Fertilizer": "Balanced NPK fertilizer with organic compost."
+    },
+    "coconut": {
+        "Soil": "Sandy loam, well-drained with high organic content.",
+        "Climate": "Tropical climate, 25-35°C.",
+        "Watering": "High water requirement, regular irrigation.",
+        "Fertilizer": "Potassium and nitrogen-rich fertilizers."
+    },
+    "cotton": {
+        "Soil": "Black soil with good drainage.",
+        "Climate": "Warm, semi-arid climate, 20-35°C.",
+        "Watering": "Regular watering required during flowering.",
+        "Fertilizer": "Nitrogen and phosphorus-rich fertilizers."
+    },
+    "jute": {
+        "Soil": "Well-drained loamy or clayey soil.",
+        "Climate": "Warm, humid climate, 25-35°C.",
+        "Watering": "High water requirement, frequent irrigation.",
+        "Fertilizer": "Organic compost and nitrogen-rich fertilizers."
+    },
+    "coffee": {
+        "Soil": "Well-drained, slightly acidic soil.",
+        "Climate": "Cool, tropical climate, 15-25°C.",
+        "Watering": "Regular irrigation required.",
+        "Fertilizer": "Nitrogen and phosphorus-rich fertilizers."
+    }
+}
